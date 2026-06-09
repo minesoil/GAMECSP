@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="resetButton">Menu</button>
+
+    <div id="gameContainer">
+        <img id="robertImage" src="Images/Robert Background Removed Default.png" alt="Teacher Robert" class="hide-teacher">
+        <img id="lightSwitchImg" src="Images/lightswitch(flippable).png" alt="Light Switch" class="hidden">
+        <img id="leftHand" src="Images/left hand.png" alt="Left Hand">
+        <img id="rightHand" src="Images/right hand.png" alt="Right Hand">
+        <img id="flamingArrow" src="Images/Flaming arrow.png" alt="Flaming Arrow" class="hidden">
+        
+        <div id="uiContainer">
+            <div id="qteContainer"></div> 
+            
+            <p id="dialogueText"></p>
+            
+            <div id="optionButtons"></div>
+            
+            <div id="timerBarContainer" class="hidden">
+                <div id="timerBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="spookyAmbience" volume="9.0" src="Music/BGM.mp3" loop></audio>
+    <audio id="scareSound" src="Music/Loud Scream Sound Effect 4.mp3"></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>

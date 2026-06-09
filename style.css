@@ -1,0 +1,133 @@
+body {
+    text-align: center;
+    color: white;
+    background-color: #0d0d0d;
+    background-image: url("Images/Cave.png");
+    background-size: 115%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; 
+    font-family: 'Courier New', monospace;
+    transition: background 0.3s ease;
+}
+
+body.main-menu {
+    background-image: url("Images/Home Screen.png");
+}
+
+#resetButton { 
+    position: absolute; top: 20px; right: 20px; z-index: 10; 
+    background-color: #220000; border: 2px solid #ff3333; color: white;
+    padding: 8px 16px; cursor: pointer;
+}
+
+#uiContainer {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); 
+    width: 85vw; max-width: 700px;
+    background-color: rgba(0, 0, 0, 0.9); border: 2px solid #ff3333;
+    padding: 20px; box-sizing: border-box; z-index: 20;
+}
+
+button {
+    background-color: #111; border: 1px solid #ff3333; color: white;
+    font-size: 18px; padding: 10px 20px; margin: 8px; cursor: pointer;
+}
+button:hover { background-color: #ff3333; color: black; }
+
+#timerBarContainer { width: 100%; height: 8px; background-color: #333; margin-top: 15px; }
+#timerBar { height: 100%; width: 100%; background-color: red; }
+
+body.blackout { background-color: black !important; background-image: none !important; }
+body.bloodFlash { background-color: #990000 !important; background-image: none !important; }
+
+/* TEACHER ROBERT STYLING */
+#robertImage {
+    position: absolute;
+    width: 260px; 
+    height: auto;
+    /* This makes him move and fade smoothly instead of snapping */
+    transition: all 1.2s ease-in-out; 
+    animation: idleBreathing 3s infinite ease-in-out;
+}
+
+/* Replaced display:none so he fades in and out smoothly */
+.hide-teacher {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.show-teacher {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.vibrating { animation: rapidShake 0.1s infinite !important; }
+
+@keyframes idleBreathing {
+    0%, 100% { margin-top: 0px; } 
+    50% { margin-top: -12px; }
+}
+
+@keyframes rapidShake {
+    0% { margin-left: -7px; } 
+    50% { margin-left: 7px; } 
+    100% { margin-left: 0; }
+}
+
+/* HANDS AND ITEMS */
+#leftHand, #rightHand {
+    position: absolute; bottom: -30px; width: 250px; height: auto; z-index: 5;
+    animation: handBob 3s infinite ease-in-out;
+}
+#leftHand { left: -20px; }
+#rightHand { right: -20px; }
+
+@keyframes handBob {
+    0%, 100% { transform: translateY(0px); } 
+    50% { transform: translateY(15px); }
+}
+
+#flamingArrow { position: absolute; top: 48%; left: -200px; width: 200px; height: auto; z-index: 10; }
+#flamingArrow.shooting { animation: flyAcross 0.4s forwards linear; }
+
+@keyframes flyAcross { 0% { left: -200px; } 100% { left: 100vw; } }
+
+#lightSwitchImg { position: absolute; top: 40%; left: 35%; transform: translate(-50%, -50%); width: 110px; height: auto; }
+#lightSwitchImg.flicking { animation: flipAnim 0.3s infinite; }
+
+@keyframes flipAnim {
+    0%, 49% { transform: translate(-50%, -50%) scaleY(1); } 
+    50%, 100% { transform: translate(-50%, -50%) scaleY(-1); }
+}
+
+/* TYPING GAME STYLING */
+#qteContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0 20px 0;
+}
+
+.qte-key {
+    background: #0a0000;
+    border: 3px solid #ff3333;
+    color: #ff3333;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 8px 22px;
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(255, 51, 51, 0.4);
+    font-family: monospace;
+}
+
+.qte-key.success {
+    background: #00ff00 !important;
+    border-color: #00ff00 !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8) !important;
+    transform: scale(0.92);
+}
+
+.hidden { display: none !important; }
